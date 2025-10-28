@@ -97,7 +97,7 @@ Display comparison dashboard and generate report.
 ## 🧠 LEARNING MODE (Optional)
 A toggle mode that visually explains each algorithm step-by-step, showing which bookings are accepted or skipped — useful for educational demonstrations.
 
-### 📄 INSTALLATION & SETUP
+## 📄 INSTALLATION & SETUP
 
 Clone the repository:
 git clone https://github.com/Rajveerr-2424/Hotel-Management-Simulator.git
@@ -113,7 +113,7 @@ npm run server
 Run frontend:
 npm start
 
-### 📊 EXAMPLE OUTPUT
+## 📊 EXAMPLE OUTPUT
 
 Guest | Rooms | Days | Payment | Algorithm | Status
 Alice | 2 | 3 | ₹9000 | Greedy | Accepted
@@ -133,7 +133,7 @@ Dynamic revenue optimization based on trends.
 
 Live performance graphs for algorithms.
 
-# 👨‍💻 AUTHORS
+## 👨‍💻 AUTHORS
 A6_B1_13 Rajveerr Awachat
 A6_B3_37 Pranav Gandhi
 and
@@ -141,5 +141,5 @@ A6_B1_16 Deepika Pampati
 
 B.Tech CSE, Ramdeobaba University
 
-🧾 LICENSE
+## 🧾 LICENSE
 This project is licensed under the MIT License — free for educational use only.
