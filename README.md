@@ -1,3 +1,5 @@
+# README
+
 🏨 HOTEL MANAGEMENT SIMULATOR
 A full-stack web application that simulates hotel room management and booking optimization using Greedy and Knapsack algorithms to maximize hotel revenue and optimize resource utilization.
 
