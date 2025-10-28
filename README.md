@@ -1,145 +1,134 @@
-# README
+# 🏨 Hotel Management Simulator — Algorithmic Revenue Optimization
 
-## 🏨 HOTEL MANAGEMENT SIMULATOR
-A full-stack web application that simulates hotel room management and booking optimization using Greedy and Knapsack algorithms to maximize hotel revenue and optimize resource utilization.
+A web-based **Hotel Management Simulator** that uses **Greedy (Fractional Knapsack)** and **Dynamic Programming (0/1 Knapsack)** algorithms to maximize hotel revenue through optimal guest selection and room allocation.  
 
-## 🚀 OVERVIEW
-The Hotel Management Simulator allows users to input guest booking requests, run algorithmic simulations, and analyze results through data visualization and reports.
-It demonstrates how algorithmic decision-making (specifically Greedy and Knapsack approaches) can be applied to real-world hotel management for better profit optimization and resource allocation.
+This project simulates real-world hotel decision-making using algorithmic logic — balancing profit, occupancy, and resource utilization.
 
-## 🧠 CORE CONCEPT
-Every booking consumes a certain number of room-nights (rooms × stay duration).
-The hotel has a fixed capacity of room-nights.
-The system decides which guests to accept to maximize total profit.
+---
 
-Two algorithms are used:
+## 🚀 Features
 
-Greedy Algorithm (Profit-to-Room-Night Ratio):
+- **Algorithmic Optimization:**
+  - Greedy approach (Profit-to-Room ratio)
+  - Dynamic Programming (Optimal Knapsack)
+- **Interactive Input System:** Add or edit guest data (profit, room demand, stay duration)
+- **Simulation Dashboard:** Displays algorithm results with:
+  - Total revenue generated
+  - Occupancy rate
+  - Accepted vs rejected guests
+- **Visual Analytics:**
+  - Bar chart: profit comparison per guest
+  - Pie chart: occupancy distribution
+- **Exportable Reports:**
+  - Download results as **PDF** for documentation
 
-Sort guest requests by (Payment / Room-Night) ratio in descending order.
+---
 
-Accept guests until capacity is reached.
+## 🧠 Tech Stack
 
-Fast but approximate.
+**Frontend:** React.js, TailwindCSS  
+**Backend:** Node.js, Express.js  
+**Database:** SQLite (lightweight, local data storage)  
+**Visualization:** Chart.js or Recharts  
+**Export Utility:** jsPDF (for generating reports)
 
-0/1 Knapsack Algorithm:
+---
 
-Finds the optimal combination of guests to yield maximum total profit without exceeding capacity.
+## ⚙️ Installation
 
-Slower but guarantees best results.
-
-## 🧩 FEATURES
-
-### 🎟️ Guest Booking Input
-
-Input guest name, stay duration, payment offered, and rooms requested.
-
-Built-in calculator for auto-calculating payment based on stay length and room type.
-
-### 🏨 Simulation Controls
-
-Set total available rooms and simulation days.
-
-Choose algorithm: Greedy, Knapsack, or comparison mode.
-
-### 📊 Results Dashboard
-
-Accepted and rejected guest lists.
-
-Occupancy rate percentage.
-
-Total revenue for both algorithms.
-
-Algorithm performance comparison.
-
-### 📈 Data Visualization
-
-Bar graph comparing revenue (Greedy vs Knapsack).
-
-Pie chart showing occupancy/room usage.
-
-Visualization toggle (ON/OFF).
-
-### 🧾 Report Generation
-
-Export results as professional PDFs (not CSV).
-
-Include summary, guest lists, charts, and metrics using jsPDF or pdfmake.
-
-## ⚙️ TECH STACK
-
-Frontend: React.js + Tailwind CSS
-Backend: Node.js (Express.js)
-Database: SQLite
-Visualization: Chart.js or Recharts
-PDF Reports: jsPDF or pdfmake
-
-Justifications:
-
-Node.js for fast, event-driven backend suitable for real-time simulation.
-
-SQLite for lightweight, file-based data storage ideal for prototypes and algorithm testing.
-
-## 🧮 ALGORITHMIC FLOW
-
-Input guest data.
-
-Calculate total room-night capacity.
-
-Run selected algorithm (Greedy or Knapsack).
-
-Compute accepted bookings.
-
-Calculate total revenue and occupancy rate.
-
-Display comparison dashboard and generate report.
-
-## 🧠 LEARNING MODE (Optional)
-A toggle mode that visually explains each algorithm step-by-step, showing which bookings are accepted or skipped — useful for educational demonstrations.
-
-## 📄 INSTALLATION & SETUP
-
-Clone the repository:
-git clone https://github.com/Rajveerr-2424/Hotel-Management-Simulator.git
-
+```bash
+# Clone the repository
+git clone https://github.com/your-username/hotel-management-simulator.git
 cd hotel-management-simulator
+```
 
-Install dependencies:
+```bash
+# Install dependencies
 npm install
+```
 
-Run backend:
-npm run server
-
-Run frontend:
+```bash
+# Start the development server
 npm start
+```
 
-## 📊 EXAMPLE OUTPUT
+---
 
-Guest | Rooms | Days | Payment | Algorithm | Status
-Alice | 2 | 3 | ₹9000 | Greedy | Accepted
-Bob | 1 | 5 | ₹7000 | Greedy | Rejected
+## 🧩 Algorithm Overview
 
-Total Revenue (Greedy): ₹9000
-Total Revenue (Knapsack): ₹10,500
-Occupancy Rate: 82%
+### 1. Greedy Algorithm (Fractional Knapsack)
+Sorts guests by **profit-to-room ratio**, selecting those with the **highest efficiency** first until hotel capacity is full.
 
-## 🧰 FUTURE ENHANCEMENTS
+### 2. Dynamic Programming (0/1 Knapsack)
+Evaluates **all possible combinations** of guests to find the **true optimal selection** that maximizes revenue.
 
-Support for multiple hotels or branches.
+### Formula:
+\[
+\text{Maximize } \sum P[i] \text{ subject to } \sum W[i] \leq \text{Hotel Capacity}
+\]
 
-Seasonal pricing logic.
+---
 
-Dynamic revenue optimization based on trends.
+## 📊 Output Metrics
 
-Live performance graphs for algorithms.
+| Metric | Description |
+|--------|--------------|
+| **Total Revenue** | Sum of accepted guest profits |
+| **Occupancy Rate** | Percentage of used room capacity |
+| **Accepted Guests** | List of guests chosen by the algorithm |
+| **Rejected Guests** | Guests not selected due to constraints |
 
-## 👨‍💻 AUTHORS
-A6_B1_13 Rajveerr Awachat
-A6_B3_37 Pranav Gandhi
-and
-A6_B1_16 Deepika Pampati
+---
 
-B.Tech CSE, Ramdeobaba University
+## 🧾 Report Generation
 
-## 🧾 LICENSE
-This project is licensed under the MIT License — free for educational use only.
+- The simulator allows users to **export results as PDF** for easy sharing and record-keeping.
+- CSV was not chosen to keep the focus on **report visualization** and formatted output.
+
+---
+
+## 💡 Why This Design
+
+| Component | Reason |
+|------------|--------|
+| **Node.js Backend** | Efficient, event-driven server for algorithm processing |
+| **SQLite Database** | Lightweight local DB ideal for simulations and quick resets |
+| **Occupancy Rate Metric** | Key business indicator in hospitality management |
+| **PDF Export** | Professional output format for reports and comparison |
+| **Visualization (Bar/Pie Charts)** | Intuitive understanding of revenue and capacity usage |
+
+---
+
+## 📚 Example Flow
+
+1. User inputs guest requests → profit, room requirement, stay duration  
+2. User selects algorithm (Greedy / Knapsack)  
+3. Simulator computes result → displays accepted guests, revenue, and occupancy  
+4. Visual charts show data insights  
+5. Option to export final report as PDF  
+
+---
+
+## 🧠 Future Enhancements
+
+- Add **Genetic Algorithm** for hybrid optimization  
+- Add **multi-hotel chain mode** for scalability testing  
+- Enable **real-time parameter adjustment**
+
+---
+
+## 👨‍💻 Contributors
+
+- **Rajveerr Awachat A6-B1-13**
+- **Pranav Gandhi A6-B3-37**
+- **Deepika Pampati A6-B1-16**
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — EDUCATIONAL USE ONLY.
+
+---
+
+### ⭐ If you find this project helpful, give it a star on GitHub!
