@@ -63,9 +63,10 @@ Sorts guests by **profit-to-room ratio**, selecting those with the **highest eff
 Evaluates **all possible combinations** of guests to find the **true optimal selection** that maximizes revenue.
 
 ### Formula:
-\[
-\text{Maximize } \sum P[i] \text{ subject to } \sum W[i] \leq \text{Hotel Capacity}
-\]
+$$
+\text{Maximize } \sum P[i] \quad \text{subject to } \sum W[i] \leq \text{Hotel Capacity}
+$$
+
 
 ---
 
